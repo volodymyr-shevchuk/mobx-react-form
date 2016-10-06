@@ -12,6 +12,8 @@ export default class Form {
 
   fields = null;
 
+  defaultOptions = {};
+
   $options = {
     showErrorsOnInit: false,
     validateOnInit: true,
@@ -24,6 +26,7 @@ export default class Form {
   };
 
   constructor(obj = {}) {
+    this.options(this.defaultOptions);
     this.assignInitData(obj);
     this.initValidator(obj);
     this.initFields(obj);
